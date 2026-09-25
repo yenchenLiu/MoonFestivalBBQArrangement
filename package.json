@@ -1,0 +1,21 @@
+{
+  "name": "moon-festival-bbq",
+  "version": "1.0.0",
+  "description": "超簡易中秋烤肉管理工具（Web + SQLite，零依賴）",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy",
+    "cf:db:create": "wrangler d1 create moon-bbq",
+    "cf:secret": "wrangler secret put ACCESS_CODE"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

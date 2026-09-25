@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>中秋烤肉管理</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌕</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">🌕 <span id="brand-title">中秋烤肉</span></div>
+    <label class="whoami">
+      我是
+      <select id="me"></select>
+    </label>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <a href="#overview" data-tab="overview">總覽</a>
+    <a href="#people" data-tab="people">人員</a>
+    <a href="#venue" data-tab="venue">場地</a>
+    <a href="#items" data-tab="items">物品</a>
+  </nav>
+
+  <main id="app" class="app">
+    <div class="loading">載入中…</div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

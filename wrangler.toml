@@ -1,0 +1,20 @@
+# Cloudflare Workers + D1 設定。部署步驟見 README「方案 A：Cloudflare Workers + D1」。
+name = "moon-bbq"                 # 部署後的網址會是 https://moon-bbq.<你的子網域>.workers.dev
+main = "worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = false
+
+# 前端靜態檔。run_worker_first 讓 Worker 先擋門，沒 cookie 連 index.html 都拿不到。
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+# D1 資料庫。執行 `wrangler d1 create moon-bbq` 後，把輸出的 database_id 貼到這裡。
+[[d1_databases]]
+binding = "DB"
+database_name = "moon-bbq"
+database_id = "6211a48f-568c-430f-a283-52e89f33f6b1"
+
+# ACCESS_CODE 不要放這裡，用 `wrangler secret put ACCESS_CODE` 設定。
+# 本機開發則放在 .dev.vars（已加入 .gitignore）。
